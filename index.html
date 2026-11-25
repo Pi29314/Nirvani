@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Nirvani Nair B.Ch.D.</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap');
+
+  .dnn-wrap {
+    --plum: #4a1942;
+    --plum-deep: #2d1028;
+    --plum-mid: #6b2d5c;
+    --gold: #c9a227;
+    --gold-light: #e8d48b;
+    --gold-soft: #f7f0d9;
+    --rose: #b76e79;
+    --rose-deep: #9a4f5c;
+    --cream: #fdf8f5;
+    --ivory: #faf6f1;
+    --text: #2c1a27;
+    --text-muted: #6b5a66;
+    --white: #ffffff;
+    --border: #e8ddd6;
+    --shadow: 0 4px 6px -1px rgb(74 25 66 / 0.07), 0 2px 4px -2px rgb(74 25 66 / 0.05);
+    --shadow-lg: 0 12px 24px -4px rgb(74 25 66 / 0.12), 0 4px 8px -4px rgb(74 25 66 / 0.06);
+    --shadow-xl: 0 30px 60px -18px rgb(20 6 18 / 0.55);
+    --radius: 14px;
+    --radius-sm: 9px;
+    --max: 1180px;
+    --ease: cubic-bezier(.22,.61,.36,1);
+
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--ivory);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+  }
+
+  .dnn-wrap *, .dnn-wrap *::before, .dnn-wrap *::after { box-sizing: border-box; }
+  .dnn-wrap img { max-width: 100%; height: auto; display: block; }
+  .dnn-wrap a { color: inherit; text-decoration: none; }
+  .dnn-wrap ul { list-style: none; margin: 0; padding: 0; }
+  .dnn-wrap button, .dnn-wrap input, .dnn-wrap select, .dnn-wrap textarea { font: inherit; }
+  .dnn-wrap :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+  .dnn-wrap .dnn-container {
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  /* ---------- Buttons ---------- */
+  .dnn-wrap .dnn-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;               /* comfortable tap target */
+    padding: 0.85rem 1.55rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease), background 0.22s;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+  }
+  .dnn-wrap .dnn-btn svg { flex-shrink: 0; }
+  .dnn-wrap .dnn-btn-primary {
+    background: linear-gradient(135deg, #dcb53a 0%, var(--gold) 45%, #b8941f 100%);
+    color: var(--plum-deep);
+    box-shadow: 0 6px 20px rgba(201, 162, 39, 0.42);
+  }
+  /* shimmer sweep */
+  .dnn-wrap .dnn-btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -120%;
+    width: 60%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s var(--ease);
+  }
+  .dnn-wrap .dnn-btn-primary:hover::after { left: 140%; }
+  .dnn-wrap .dnn-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201, 162, 39, 0.5); }
+
+  .dnn-wrap .dnn-btn-secondary { background: var(--plum); color: white; }
+  .dnn-wrap .dnn-btn-secondary:hover { background: var(--plum-mid); transform: translateY(-1px); }
+
+  .dnn-wrap .dnn-btn-outline { background: transparent; color: var(--plum); border: 2px solid var(--gold); }
+  .dnn-wrap .dnn-btn-outline:hover { background: var(--gold-soft); }
+
+  .dnn-wrap .dnn-btn-ghost {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border: 1.5px solid rgba(232,212,139,0.55);
+    backdrop-filter: blur(6px);
+  }
+  .dnn-wrap .dnn-btn-ghost:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+
+  .dnn-wrap .dnn-btn-whatsapp { background: #25d366; color: white; box-shadow: 0 6px 18px rgba(37,211,102,0.3); }
+  .dnn-wrap .dnn-btn-whatsapp:hover { background: #1da851; transform: translateY(-1px); }
+
+  /* ---------- Section headings ---------- */
+  .dnn-wrap .dnn-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    margin-bottom: 0.6rem;
+  }
+  .dnn-wrap .dnn-eyebrow::before {
+    content: '';
+    width: 28px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--rose));
+    border-radius: 2px;
+  }
+  .dnn-wrap .dnn-center { text-align: center; }
+  .dnn-wrap .dnn-center .dnn-eyebrow { justify-content: center; }
+  .dnn-wrap .dnn-center .dnn-section-sub { margin-inline: auto; }
+
+  .dnn-wrap .dnn-section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4.6vw, 2.75rem);
+    color: var(--plum);
+    margin: 0 0 0.6rem;
+    line-height: 1.15;
+    font-weight: 700;
+  }
+  .dnn-wrap .dnn-section-title em { font-style: italic; color: var(--rose-deep); }
+  .dnn-wrap .dnn-section-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 38rem;
+    margin: 0 0 2.5rem;
+  }
+
+  /* ---------- Top bar (hidden on small phones to save fold space) ---------- */
+  .dnn-wrap .dnn-top-bar {
+    display: none;
+    background: var(--plum-deep);
+    color: #f0e6ec;
+    font-size: 0.83rem;
+    padding: 0.55rem 0;
+  }
+  .dnn-wrap .dnn-top-bar .dnn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+  }
+  .dnn-wrap .dnn-top-bar a { color: var(--gold-light); }
+  .dnn-wrap .dnn-top-bar a:hover { color: white; }
+
+  /* ---------- Header ---------- */
+  .dnn-wrap .dnn-header {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(160%) blur(10px);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: box-shadow 0.25s;
+  }
+  .dnn-wrap .dnn-header.dnn-scrolled { box-shadow: var(--shadow-lg); }
+  .dnn-wrap .dnn-nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.8rem;
+    gap: 1rem;
+  }
+  .dnn-wrap .dnn-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--plum);
+    line-height: 1.1;
+  }
+  .dnn-wrap .dnn-logo-mark {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--plum) 0%, var(--plum-mid) 100%);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(74,25,66,0.25);
+  }
+  .dnn-wrap .dnn-logo small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.64rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .dnn-wrap .dnn-nav-links { display: none; gap: 1.9rem; align-items: center; }
+  .dnn-wrap .dnn-nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text);
+    position: relative;
+    padding-block: 0.3rem;
+  }
+  .dnn-wrap .dnn-nav-links a::after {
+    content: '';
+    position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s var(--ease);
+  }
+  .dnn-wrap .dnn-nav-links a:hover::after { transform: scaleX(1); }
+  .dnn-wrap .dnn-nav-cta { display: none; }
+
+  .dnn-wrap .dnn-menu-toggle {
+    width: 44px; height: 44px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 5px;
+    background: var(--gold-soft);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .dnn-wrap .dnn-menu-toggle span {
+    display: block;
+    width: 22px; height: 2.5px;
+    background: var(--plum);
+    border-radius: 2px;
+    transition: transform 0.25s var(--ease), opacity 0.2s;
+  }
+  .dnn-wrap .dnn-menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .dnn-wrap .dnn-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .dnn-wrap .dnn-menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  .dnn-wrap .dnn-mobile-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s var(--ease);
+    background: var(--white);
+  }
+  .dnn-wrap .dnn-mobile-menu > div { overflow: hidden; }
+  .dnn-wrap .dnn-mobile-menu.dnn-open { grid-template-rows: 1fr; border-top: 1px solid var(--border); }
+  .dnn-wrap .dnn-mobile-menu-inner { padding: 0.5rem 1.25rem 1.5rem; }
+  .dnn-wrap .dnn-mobile-menu a:not(.dnn-btn) {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .dnn-wrap .dnn-mobile-menu a:not(.dnn-btn)::after { content: '→'; color: var(--gold); }
+  .dnn-wrap .dnn-mobile-menu .dnn-btn { margin-top: 1.1rem; width: 100%; }
+
+  /* ---------- Hero ---------- */
+  .dnn-wrap .dnn-hero {
+    background: linear-gradient(150deg, var(--plum-deep) 0%, var(--plum) 48%, #5c2a4f 100%);
+    color: white;
+    padding: 2.25rem 0 5.5rem;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .dnn-wrap .dnn-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 85% 15%, rgba(201,162,39,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 5% 90%, rgba(183,110,121,0.22) 0%, transparent 50%);
+    z-index: -1;
+  }
+  /* soft sparkle dots */
+  .dnn-wrap .dnn-hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(232,212,139,0.18) 1px, transparent 1.5px);
+    background-size: 26px 26px;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 40%, transparent 100%);
+    z-index: -1;
+  }
+  /* Mobile: flatten the text column so the photo can sit directly under the
+     headline (above the fold); restored to two columns at 900px+ */
+  .dnn-wrap .dnn-hero-grid {
+    display: grid;
+    gap: 0;
+    align-items: center;
+  }
+  .dnn-wrap .dnn-hero-content { display: contents; }
+  .dnn-wrap .dnn-hero-badge { order: 1; justify-self: start; }
+  .dnn-wrap .dnn-hero h1 { order: 2; }
+  .dnn-wrap .dnn-hero-visual { order: 3; }
+  .dnn-wrap .dnn-hero-lead { order: 4; }
+  .dnn-wrap .dnn-hero-actions { order: 5; }
+  .dnn-wrap .dnn-hero-stats { order: 6; }
+  .dnn-wrap .dnn-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(6px);
+    padding: 0.4rem 1rem 0.4rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(232,212,139,0.3);
+  }
+  .dnn-wrap .dnn-pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 0 rgba(74,222,128,0.7);
+    animation: dnnPulse 2s infinite;
+  }
+  @keyframes dnnPulse {
+    0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.6); }
+    70% { box-shadow: 0 0 0 9px rgba(74,222,128,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+  }
+  .dnn-wrap .dnn-hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.3rem, 7.5vw, 3.85rem);
+    line-height: 1.06;
+    margin: 0 0 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .dnn-wrap .dnn-hero h1 em {
+    font-style: italic;
+    background: linear-gradient(90deg, var(--gold-light), #f5e3a3 50%, var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .dnn-wrap .dnn-hero-lead {
+    font-size: 1.06rem;
+    opacity: 0.92;
+    margin: 0 0 1.6rem;
+    max-width: 32rem;
+  }
+  .dnn-wrap .dnn-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .dnn-wrap .dnn-hero-actions .dnn-btn { width: 100%; padding-inline: 0.9rem; }
+  .dnn-wrap .dnn-hero-actions .dnn-btn:first-child { grid-column: 1 / -1; }
+  .dnn-wrap .dnn-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.16);
+  }
+  .dnn-wrap .dnn-stat strong {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 0.3rem;
+  }
+  .dnn-wrap .dnn-stat span { font-size: 0.78rem; opacity: 0.85; line-height: 1.3; display: block; }
+
+  /* Hero visual */
+  .dnn-wrap .dnn-hero-visual {
+    position: relative;
+    max-width: 560px;
+    width: 100%;
+    margin: 0.25rem auto 1.4rem;
+    padding: 0.5rem 0.75rem 1.25rem 0.5rem;
+  }
+  .dnn-wrap .dnn-hero-visual::before {         /* gold offset frame */
+    content: '';
+    position: absolute;
+    inset: 0 0 0.5rem 1.5rem;
+    border: 2px solid rgba(232,212,139,0.55);
+    border-radius: 34px 34px 34px 120px;
+    transform: translate(10px, 10px);
+  }
+  .dnn-wrap .dnn-hero-visual::after {          /* glow blob */
+    content: '';
+    position: absolute;
+    width: 70%; aspect-ratio: 1;
+    right: -12%; top: -10%;
+    background: radial-gradient(circle, rgba(201,162,39,0.45) 0%, transparent 65%);
+    filter: blur(20px);
+    z-index: -1;
+  }
+  .dnn-wrap .dnn-hero-frame {
+    position: relative;
+    border-radius: 30px 30px 30px 110px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--shadow-xl);
+    background: var(--plum-mid);
+  }
+  .dnn-wrap .dnn-hero-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 50% 35%;
+    transform: scale(1.04);
+    animation: dnnKen 14s ease-in-out infinite alternate;
+  }
+  @keyframes dnnKen { to { transform: scale(1.1) translate(-1%, -1%); } }
+  .dnn-wrap .dnn-hero-frame::after {          /* subtle plum tint at base for depth */
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(45,16,40,0.35) 100%);
+  }
+
+  .dnn-wrap .dnn-float {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255,255,255,0.96);
+    color: var(--text);
+    border-radius: 16px;
+    padding: 0.6rem 0.85rem;
+    box-shadow: 0 14px 30px -10px rgba(20,6,18,0.45);
+    font-size: 0.78rem;
+    line-height: 1.25;
+    z-index: 2;
+    animation: dnnFloat 5s ease-in-out infinite;
+  }
+  .dnn-wrap .dnn-float strong { display: block; color: var(--plum); font-size: 0.85rem; }
+  .dnn-wrap .dnn-float-icon {
+    width: 34px; height: 34px; border-radius: 10px;
+    display: grid; place-items: center;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+  .dnn-wrap .dnn-float-1 { left: 0; bottom: 0.25rem; }
+  .dnn-wrap .dnn-float-1 .dnn-float-icon { background: var(--gold-soft); }
+  .dnn-wrap .dnn-float-2 { right: 0; top: 0; animation-delay: -2.5s; display: none; }
+  .dnn-wrap .dnn-float-2 .dnn-float-icon { background: #e9f9ef; }
+  @keyframes dnnFloat { 50% { transform: translateY(-8px); } }
+
+  /* Wave divider */
+  .dnn-wrap .dnn-wave {
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    line-height: 0;
+  }
+  .dnn-wrap .dnn-wave svg { width: 100%; height: 56px; display: block; }
+
+  /* ---------- Trust strip ---------- */
+  .dnn-wrap .dnn-trust { background: var(--white); padding: 0.5rem 0 1.5rem; }
+  .dnn-wrap .dnn-trust-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .dnn-wrap .dnn-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 0.9rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--plum);
+  }
+  .dnn-wrap .dnn-trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+  /* ---------- Locations ---------- */
+  .dnn-wrap .dnn-locations { padding: 3.5rem 0 4.5rem; background: var(--white); }
+  .dnn-wrap .dnn-location-grid { display: grid; gap: 1.25rem; }
+  .dnn-wrap .dnn-location-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.4rem;
+    transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s var(--ease);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .dnn-wrap .dnn-location-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--rose), var(--plum-mid));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s var(--ease);
+  }
+  .dnn-wrap .dnn-location-card:hover { box-shadow: var(--shadow-lg); border-color: var(--gold-light); transform: translateY(-4px); }
+  .dnn-wrap .dnn-location-card:hover::before { transform: scaleX(1); }
+  .dnn-wrap .dnn-loc-num {
+    position: absolute;
+    right: 1.1rem; top: 0.6rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.18;
+    line-height: 1;
+  }
+  .dnn-wrap .dnn-location-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--plum);
+    margin: 0 0 0.35rem;
+    font-weight: 700;
+  }
+  .dnn-wrap .dnn-location-card .dnn-area {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--rose-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .dnn-wrap .dnn-location-card address {
+    font-style: normal;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+    flex-grow: 1;
+    line-height: 1.55;
+  }
+  .dnn-wrap .dnn-location-card .dnn-phone {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+    font-size: 1.05rem;
+    color: var(--plum);
+  }
+  .dnn-wrap .dnn-location-card .dnn-phone a { color: var(--plum-mid); }
+  .dnn-wrap .dnn-location-card .dnn-phone a:hover { color: var(--rose-deep); text-decoration: underline; }
+  .dnn-wrap .dnn-card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: auto; }
+  .dnn-wrap .dnn-location-card .dnn-btn { padding: 0.6rem 1rem; font-size: 0.875rem; min-height: 44px; }
+
+  /* ---------- Gallery ---------- */
+  .dnn-wrap .dnn-gallery { padding: 4rem 0 4.5rem; background: var(--ivory); }
+  .dnn-wrap .dnn-gallery-grid { display: grid; gap: 0.75rem; grid-template-columns: 1fr 1fr; }
+  .dnn-wrap .dnn-gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    box-shadow: var(--shadow);
+    background: var(--gold-soft);
+  }
+  .dnn-wrap .dnn-gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease);
+  }
+  .dnn-wrap .dnn-gallery-item::after {
+    content: attr(data-caption);
+    position: absolute; inset: auto 0 0 0;
+    padding: 2rem 0.9rem 0.7rem;
+    background: linear-gradient(180deg, transparent, rgba(45,16,40,0.8));
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s, transform 0.3s var(--ease);
+  }
+  .dnn-wrap .dnn-gallery-item:hover img { transform: scale(1.07); }
+  .dnn-wrap .dnn-gallery-item:hover::after { opacity: 1; transform: none; }
+
+  /* ---------- Services ---------- */
+  .dnn-wrap .dnn-services { padding: 4rem 0 4.5rem; background: var(--white); }
+  .dnn-wrap .dnn-services-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  .dnn-wrap .dnn-service-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 1.35rem 1.25rem;
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: transform 0.25s var(--ease), box-shadow 0.25s, background 0.25s, border-color 0.25s;
+  }
+  .dnn-wrap .dnn-service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: var(--white);
+    border-color: var(--gold-light);
+  }
+  .dnn-wrap .dnn-service-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--gold-soft), #fff);
+    border: 1px solid var(--gold-light);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+    font-size: 1.35rem;
+    transition: transform 0.3s var(--ease);
+  }
+  .dnn-wrap .dnn-service-card:hover .dnn-service-icon { transform: rotate(-8deg) scale(1.08); }
+  .dnn-wrap .dnn-service-card h3 { font-size: 1.05rem; margin: 0 0 0.25rem; color: var(--plum); }
+  .dnn-wrap .dnn-service-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+  /* ---------- Why Us ---------- */
+  .dnn-wrap .dnn-why-us {
+    padding: 4.5rem 0;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+  }
+  .dnn-wrap .dnn-why-grid { display: grid; gap: 1rem; }
+  .dnn-wrap .dnn-why-item {
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    background: var(--white);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    transition: transform 0.25s var(--ease), box-shadow 0.25s;
+  }
+  .dnn-wrap .dnn-why-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .dnn-wrap .dnn-why-item .dnn-num {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+    color: var(--plum-deep);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+    box-shadow: 0 0 0 6px var(--gold-soft);
+  }
+  .dnn-wrap .dnn-why-item h3 { font-size: 1.1rem; margin: 0 0 0.4rem; color: var(--plum); }
+  .dnn-wrap .dnn-why-item p { font-size: 0.93rem; color: var(--text-muted); max-width: 260px; margin: 0 auto; }
+
+  /* ---------- CTA band ---------- */
+  .dnn-wrap .dnn-cta-band {
+    background: linear-gradient(120deg, var(--plum) 0%, var(--plum-mid) 60%, var(--rose-deep) 100%);
+    color: white;
+    padding: 2.75rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .dnn-wrap .dnn-cta-band::before {
+    content: '';
+    position: absolute;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 40px solid rgba(232,212,139,0.12);
+    right: -100px; top: -140px;
+  }
+  .dnn-wrap .dnn-cta-inner { display: grid; gap: 1.25rem; position: relative; }
+  .dnn-wrap .dnn-cta-band h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    margin: 0 0 0.3rem;
+    line-height: 1.15;
+  }
+  .dnn-wrap .dnn-cta-band p { margin: 0; opacity: 0.9; }
+  .dnn-wrap .dnn-cta-actions { display: grid; gap: 0.7rem; }
+
+  /* ---------- Booking ---------- */
+  .dnn-wrap .dnn-booking { padding: 4.5rem 0; background: var(--white); scroll-margin-top: 70px; }
+  .dnn-wrap .dnn-booking-layout { display: grid; gap: 2.5rem; }
+  .dnn-wrap .dnn-booking-info > p { color: var(--text-muted); margin: 0 0 1.5rem; }
+  .dnn-wrap .dnn-contact-methods { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; }
+  .dnn-wrap .dnn-contact-method {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: var(--cream);
+    padding: 0.95rem 1.1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, transform 0.2s var(--ease);
+  }
+  .dnn-wrap .dnn-contact-method:hover { border-color: var(--gold-light); transform: translateX(3px); }
+  .dnn-wrap .dnn-contact-method .dnn-icon {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .dnn-wrap .dnn-contact-method strong { display: block; font-size: 0.95rem; color: var(--plum); }
+  .dnn-wrap .dnn-contact-method span,
+  .dnn-wrap .dnn-contact-method a { font-size: 0.9rem; color: var(--text-muted); word-break: break-word; }
+  .dnn-wrap .dnn-contact-method a:hover { color: var(--rose-deep); }
+  .dnn-wrap .dnn-hours {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: var(--gold-soft);
+    border-left: 4px solid var(--gold);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 12px 12px 0;
+    margin: 0;
+  }
+
+  .dnn-wrap .dnn-form-card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 1.75rem 1.35rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .dnn-wrap .dnn-form-card::before {
+    content: '';
+    position: absolute; inset: 0 0 auto 0;
+    height: 5px;
+    border-radius: 20px 20px 0 0;
+    background: linear-gradient(90deg, var(--gold), var(--rose), var(--plum-mid));
+  }
+  .dnn-wrap .dnn-form-card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.35rem;
+    color: var(--plum);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+  }
+  .dnn-wrap .dnn-form-note { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 1.35rem; }
+  .dnn-wrap .dnn-form-group { margin-bottom: 1.05rem; }
+  .dnn-wrap .dnn-form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    color: var(--text);
+  }
+  .dnn-wrap .dnn-form-group input,
+  .dnn-wrap .dnn-form-group select,
+  .dnn-wrap .dnn-form-group textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    font-size: 16px;               /* prevents iOS zoom on focus */
+    color: var(--text);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .dnn-wrap .dnn-form-group input:focus,
+  .dnn-wrap .dnn-form-group select:focus,
+  .dnn-wrap .dnn-form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.22);
+  }
+  .dnn-wrap .dnn-form-group.dnn-invalid input { border-color: #c2414b; box-shadow: 0 0 0 3px rgba(194,65,75,0.15); }
+  .dnn-wrap .dnn-field-error { display: none; color: #b3303b; font-size: 0.8rem; margin-top: 0.3rem; }
+  .dnn-wrap .dnn-form-group.dnn-invalid .dnn-field-error { display: block; }
+  .dnn-wrap .dnn-form-group textarea { min-height: 110px; resize: vertical; }
+  .dnn-wrap .dnn-form-row { display: grid; gap: 0 1rem; }
+  .dnn-wrap .dnn-form-card .dnn-btn { width: 100%; margin-top: 0.5rem; }
+
+  .dnn-wrap .dnn-form-success {
+    display: none;
+    text-align: center;
+    padding: 1.25rem;
+    background: #f0e6ec;
+    border-radius: var(--radius-sm);
+    color: var(--plum);
+    margin-top: 1rem;
+    font-size: 0.92rem;
+  }
+  .dnn-wrap .dnn-form-success.dnn-show { display: block; }
+
+  /* ---------- Footer ---------- */
+  .dnn-wrap .dnn-footer {
+    background: var(--plum-deep);
+    color: #e8d5e0;
+    padding: 3.25rem 0 6rem;      /* extra bottom room for the mobile action bar */
+  }
+  .dnn-wrap .dnn-footer-grid { display: grid; gap: 2rem; }
+  .dnn-wrap .dnn-footer .dnn-logo { color: white; margin-bottom: 0.85rem; }
+  .dnn-wrap .dnn-footer .dnn-logo small { color: var(--gold-light); }
+  .dnn-wrap .dnn-footer-brand p { font-size: 0.9rem; max-width: 300px; opacity: 0.88; margin: 0; }
+  .dnn-wrap .dnn-footer-col h4 { color: var(--gold-light); font-size: 0.95rem; margin: 0 0 0.85rem; font-weight: 600; }
+  .dnn-wrap .dnn-footer-col a,
+  .dnn-wrap .dnn-footer-col p { display: block; font-size: 0.9rem; margin: 0 0 0.5rem; opacity: 0.88; }
+  .dnn-wrap .dnn-footer-col a:hover { color: white; opacity: 1; }
+  .dnn-wrap .dnn-footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  /* ---------- Mobile sticky action bar ---------- */
+  .dnn-wrap .dnn-mobile-bar {
+    position: fixed;
+    left: 0.75rem; right: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    z-index: 999;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    gap: 0.4rem;
+    padding: 0.4rem;
+    background: rgba(45,16,40,0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 9999px;
+    box-shadow: 0 12px 30px -8px rgba(20,6,18,0.55);
+    transform: translateY(150%);
+    transition: transform 0.35s var(--ease);
+  }
+  .dnn-wrap .dnn-mobile-bar.dnn-visible { transform: none; }
+  .dnn-wrap .dnn-mobile-bar a {
+    display: flex; align-items: center; justify-content: center; gap: 0.35rem;
+    min-height: 46px;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: white;
+  }
+  .dnn-wrap .dnn-mobile-bar .dnn-mb-wa { background: #25d366; }
+  .dnn-wrap .dnn-mobile-bar .dnn-mb-call { background: rgba(255,255,255,0.12); }
+  .dnn-wrap .dnn-mobile-bar .dnn-mb-book { background: linear-gradient(135deg, #dcb53a, var(--gold)); color: var(--plum-deep); }
+
+  /* ---------- Scroll reveal (only when JS is running) ---------- */
+  .dnn-wrap.dnn-js .dnn-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    transition-delay: var(--d, 0s);
+  }
+  .dnn-wrap.dnn-js .dnn-reveal.dnn-in { opacity: 1; transform: none; }
+
+  /* =========================================================
+     Breakpoints – mobile-first, progressively enhanced
+     ========================================================= */
+  @media (min-width: 480px) {
+    .dnn-wrap .dnn-float-2 { display: flex; }
+    .dnn-wrap .dnn-cta-actions { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 640px) {
+    .dnn-wrap .dnn-top-bar { display: block; }
+    .dnn-wrap .dnn-trust-list { grid-template-columns: repeat(4, 1fr); }
+    .dnn-wrap .dnn-location-grid { grid-template-columns: 1fr 1fr; }
+    .dnn-wrap .dnn-services-grid { grid-template-columns: 1fr 1fr; }
+    .dnn-wrap .dnn-why-grid { grid-template-columns: 1fr 1fr; }
+    .dnn-wrap .dnn-form-row { grid-template-columns: 1fr 1fr; }
+    .dnn-wrap .dnn-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .dnn-wrap .dnn-form-card { padding: 2rem 1.75rem; }
+    .dnn-wrap .dnn-footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 768px) {
+    .dnn-wrap .dnn-nav-links { display: flex; }
+    .dnn-wrap .dnn-nav-cta { display: inline-flex; }
+    .dnn-wrap .dnn-menu-toggle, .dnn-wrap .dnn-mobile-menu { display: none; }
+    .dnn-wrap .dnn-mobile-bar { display: none; }
+    .dnn-wrap .dnn-footer { padding-bottom: 1.5rem; }
+    .dnn-wrap .dnn-location-grid { grid-template-columns: repeat(3, 1fr); }
+    .dnn-wrap .dnn-services-grid { grid-template-columns: repeat(3, 1fr); }
+    .dnn-wrap .dnn-why-grid { grid-template-columns: repeat(4, 1fr); }
+    .dnn-wrap .dnn-booking-layout { grid-template-columns: 1fr 1.1fr; align-items: start; }
+    .dnn-wrap .dnn-footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    .dnn-wrap .dnn-cta-inner { grid-template-columns: 1.4fr 1fr; align-items: center; }
+    .dnn-wrap .dnn-hero-actions { display: flex; flex-wrap: wrap; }
+    .dnn-wrap .dnn-hero-actions .dnn-btn { width: auto; }
+  }
+
+  /* Two-column hero: text left, family photo right */
+  @media (min-width: 900px) {
+    .dnn-wrap .dnn-hero { padding: 3.5rem 0 6.5rem; }
+    .dnn-wrap .dnn-hero-grid { grid-template-columns: 1.05fr 1fr; gap: 3rem; }
+    .dnn-wrap .dnn-hero-content { display: block; max-width: 620px; }
+    .dnn-wrap .dnn-hero-visual { margin: 0; }
+    .dnn-wrap .dnn-hero-frame { aspect-ratio: 5 / 5.2; }
+    .dnn-wrap .dnn-hero-visual { padding: 1rem 1rem 1.5rem 1.5rem; }
+    .dnn-wrap .dnn-float-1 { left: -0.75rem; bottom: 1.5rem; }
+    .dnn-wrap .dnn-float-2 { right: -0.5rem; top: 2rem; }
+  }
+
+  @media (min-width: 1024px) {
+    .dnn-wrap .dnn-container { padding-inline: 1.5rem; }
+    .dnn-wrap .dnn-hero { padding: 4.5rem 0 7rem; }
+    .dnn-wrap .dnn-hero-grid { gap: 4rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dnn-wrap *, .dnn-wrap *::before, .dnn-wrap *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    .dnn-wrap.dnn-js .dnn-reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="dnn-wrap" id="dnnWrap">
+
+  <!-- Top bar (tablet & up) -->
+  <div class="dnn-top-bar">
+    <div class="dnn-container">
+      <div class="">Three convenient locations · Rylands · New Woodlands · Kraaifontein</div>
+      <div class="">
+        <a href="tel:+27824651722" class="">WhatsApp / Call 082 465 1722</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:Dr-nirvani-nair@telkomsa.net" class="">Dr-nirvani-nair@telkomsa.net</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="dnn-header" id="dnnHeader">
+    <div class="dnn-container dnn-nav-wrap">
+      <a href="#dnn-top" class="dnn-logo" aria-label="Dr Nirvani Nair – home">
+        <span class="dnn-logo-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8d48b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.4-3.6-2-5.4-1.3C4.3 5 3.4 7.6 4 10.3c.4 1.8 1 3.3 1.4 5 .4 1.9.6 4.7 2.2 4.7 1.7 0 1.6-3.6 2.4-5 .5-.8 1.3-.8 2 0 .8 1.4.7 5 2.4 5 1.6 0 1.8-2.8 2.2-4.7.4-1.7 1-3.2 1.4-5 .6-2.7-.3-5.3-2.6-6.1-1.8-.7-3.8-.1-5.4 1.3z"></path></svg>
+        </span>
+        <span class="">Dr Nirvani Nair<small>Family Dental Practice</small></span>
+      </a>
+
+      <nav class="dnn-nav-links" aria-label="Main">
+        <a href="#dnn-locations" class="">Locations</a>
+        <a href="#dnn-gallery" class="">Gallery</a>
+        <a href="#dnn-services" class="">Services</a>
+        <a href="#dnn-why-us" class="">Why Us</a>
+        <a href="#dnn-book" class="">Contact</a>
+      </nav>
+
+      <a href="#dnn-book" class="dnn-btn dnn-btn-primary dnn-nav-cta">Book Appointment</a>
+
+      <button class="dnn-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="dnnMobileMenu" id="dnnMenuToggle" type="button">
+        <span class=""></span><span class=""></span><span class=""></span>
+      </button>
+    </div>
+
+    <div class="dnn-mobile-menu" id="dnnMobileMenu">
+      <div class="">
+        <div class="dnn-mobile-menu-inner">
+          <a href="#dnn-locations" class="">Locations</a>
+          <a href="#dnn-gallery" class="">Gallery</a>
+          <a href="#dnn-services" class="">Services</a>
+          <a href="#dnn-why-us" class="">Why Us</a>
+          <a href="#dnn-book" class="">Contact</a>
+          <a href="#dnn-book" class="dnn-btn dnn-btn-primary">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="dnn-hero" id="dnn-top">
+    <div class="dnn-container dnn-hero-grid">
+      <div class="dnn-hero-content">
+        <div class="dnn-hero-badge"><span class="dnn-pulse" aria-hidden="true"></span>Serving Cape Town families since 2009</div>
+        <h1 class="">Creating &amp; maintaining <em class="">vibrant smiles</em> for healthy families</h1>
+        <p class="dnn-hero-lead">Gentle, modern dentistry focused on your comfort. Affordable care, the latest technology, and a team that treats you like family - across three convenient locations.</p>
+        <div class="dnn-hero-actions">
+          <a href="#dnn-book" class="dnn-btn dnn-btn-primary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+            Book an Appointment
+          </a>
+          <a href="https://wa.me/27824651722" class="dnn-btn dnn-btn-whatsapp" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.9 9.9 0 0012.04 2zm5.8 14.06c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.1-1.47-1.1-2.8 0-1.33.7-1.99.95-2.26.24-.27.53-.34.71-.34h.51c.16 0 .38-.06.6.46.23.54.77 1.87.84 2 .07.14.11.3.02.48-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.69 1.14 1.48 1.85 1.02.91 1.88 1.19 2.15 1.33.27.13.42.11.58-.07.16-.18.67-.78.85-1.05.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.88.27.13.45.2.51.31.07.11.07.65-.17 1.33z"></path></svg>
+            WhatsApp Us
+          </a>
+          <a href="tel:+27824651722" class="dnn-btn dnn-btn-ghost">
+            <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+            082 465 1722
+          </a>
+        </div>
+        <div class="dnn-hero-stats">
+          <div class="dnn-stat"><strong class="">3</strong><span class="">Cape Town locations</span></div>
+          <div class="dnn-stat"><strong class="">15+</strong><span class="">Years of caring</span></div>
+          <div class="dnn-stat"><strong class="">All</strong><span class="">Medical aids welcome</span></div>
+        </div>
+      </div>
+
+      <!-- Hero family image (right on desktop, below text on mobile) -->
+      <div class="dnn-hero-visual">
+        <div class="dnn-hero-frame">
+          <img src="https://images.pexels.com/photos/8208691/pexels-photo-8208691.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" srcset="https://images.pexels.com/photos/8208691/pexels-photo-8208691.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600 600w,
+                    https://images.pexels.com/photos/8208691/pexels-photo-8208691.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000 1000w,
+                    https://images.pexels.com/photos/8208691/pexels-photo-8208691.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w" sizes="(min-width: 900px) 540px, 92vw" width="1000" height="667" alt="Smiling mother, father and young son hugging outdoors – a happy, healthy family" fetchpriority="high" class="">
+        </div>
+        <div class="dnn-float dnn-float-1">
+          <span class="dnn-float-icon" aria-hidden="true">😁</span>
+          <div class=""><strong class="">Healthy smiles</strong>for the whole family</div>
+        </div>
+        <div class="dnn-float dnn-float-2">
+          <span class="dnn-float-icon" aria-hidden="true">🛡️</span>
+          <div class=""><strong class="">Gentle care</strong>for anxious patients</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dnn-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path fill="#ffffff" d="M0 32c120 18 300 28 480 18S840 6 1020 8s300 24 420 30v18H0z"></path></svg>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <div class="dnn-trust">
+    <div class="dnn-container">
+      <ul class="dnn-trust-list">
+        <li class="dnn-trust-item dnn-reveal"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>All medical aids</li>
+        <li class="dnn-trust-item dnn-reveal" style="--d:.08s"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>Open Mon - Sat</li>
+        <li class="dnn-trust-item dnn-reveal" style="--d:.16s"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>Kids welcome</li>
+        <li class="dnn-trust-item dnn-reveal" style="--d:.24s"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>Emergencies seen</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Locations -->
+  <section class="dnn-locations" id="dnn-locations">
+    <div class="dnn-container">
+      <div class="dnn-reveal">
+        <div class="dnn-eyebrow">Find us</div>
+        <h2 class="dnn-section-title">Our <em class="">Locations</em></h2>
+        <p class="dnn-section-sub">Three practices across Cape Town so quality dental care is always close by. Call the branch directly or use our central booking number.</p>
+      </div>
+
+      <div class="dnn-location-grid">
+        <article class="dnn-location-card dnn-reveal">
+          <span class="dnn-loc-num" aria-hidden="true">01</span>
+          <div class="dnn-area">Athlone / Rylands</div>
+          <h3 class="">Rawoot Square</h3>
+          <address>
+            Suite 208/209, Rawoot Square<br>
+            Corner of Klipfontein &amp; Murton Rd<br>
+            Athlone / Rylands
+          </address>
+          <div class="dnn-phone">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+            <a href="tel:+27216336566" class="">021 633 6566</a>
+          </div>
+          <div class="dnn-card-actions">
+            <a href="tel:+27216336566" class="dnn-btn dnn-btn-secondary">Call Branch</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Rawoot+Square+Klipfontein+Road+Rylands+Cape+Town" class="dnn-btn dnn-btn-outline" target="_blank" rel="noopener">Directions</a>
+          </div>
+        </article>
+
+        <article class="dnn-location-card dnn-reveal" style="--d:.1s">
+          <span class="dnn-loc-num" aria-hidden="true">02</span>
+          <div class="dnn-area">MItchells Plain</div>
+          <h3 class="">Woodlands</h3>
+          <address>
+            1 Johannes Meintjies Drive<br>
+            Corner of Johannes Meintjies &amp; Highlands Drive<br>
+            New Woodlands
+          </address>
+          <div class="dnn-phone">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+            <a href="tel:+27213711996" class="">021 371 1996</a>
+          </div>
+          <div class="dnn-card-actions">
+            <a href="tel:+27213711996" class="dnn-btn dnn-btn-secondary">Call Branch</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=1+Johannes+Meintjies+Drive+New+Woodlands+Cape+Town" class="dnn-btn dnn-btn-outline" target="_blank" rel="noopener">Directions</a>
+          </div>
+        </article>
+
+        <article class="dnn-location-card dnn-reveal" style="--d:.2s">
+          <span class="dnn-loc-num" aria-hidden="true">03</span>
+          <div class="dnn-area">Peerless Park, Kraaifontein</div>
+          <h3 class="">Stop and Shop Centre</h3>
+          <address>
+            Shop 2, Stop and Shop Centre<br>
+            192 Horak Street<br>
+            Corner of Horak &amp; Raan Street<br>
+            Peerless Park, Kraaifontein
+          </address>
+          <div class="dnn-phone">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+            <a href="tel:+27219860158" class="">021 986 0158</a>
+          </div>
+          <div class="dnn-card-actions">
+            <a href="tel:+27219860158" class="dnn-btn dnn-btn-secondary">Call Branch</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=192+Horak+Street+Peerless+Park+Kraaifontein" class="dnn-btn dnn-btn-outline" target="_blank" rel="noopener">Directions</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="dnn-gallery" id="dnn-gallery">
+    <div class="dnn-container">
+      <div class="dnn-reveal">
+        <div class="dnn-eyebrow">Inside the practice</div>
+        <h2 class="dnn-section-title">A space designed for <em class="">comfort</em></h2>
+        <p class="dnn-section-sub">A warm, modern environment designed for comfort and care. Replace these images with your own photos when ready.</p>
+      </div>
+      <div class="dnn-gallery-grid">
+        <div class="dnn-gallery-item dnn-reveal" data-caption="Modern treatment rooms">
+          <img src="https://drnirvaninair.co.za/wp-content/uploads/2022/07/nair01.jpg" alt="Modern dental treatment room" loading="lazy" class="">
+        </div>
+        <div class="dnn-gallery-item dnn-reveal" style="--d:.08s" data-caption="Patient comfort first">
+          <img src="https://drnirvaninair.co.za/wp-content/uploads/2022/07/nair03.jpg" alt="Dental care and patient comfort" loading="lazy" class="">
+        </div>
+        <div class="dnn-gallery-item dnn-reveal" style="--d:.16s" data-caption="Clean clinical environment">
+          <img src="https://drnirvaninair.co.za/wp-content/uploads/2022/07/nair04.jpg" alt="Clean clinical environment" loading="lazy" class="">
+        </div>
+        <div class="dnn-gallery-item dnn-reveal" data-caption="Quality instruments">
+          <img src="https://drnirvaninair.co.za/wp-content/uploads/2022/07/nair02.jpg" alt="Professional dental tools" loading="lazy" class="">
+        </div>
+        <div class="dnn-gallery-item dnn-reveal" style="--d:.08s" data-caption="Friendly consultations">
+          <img src="https://drnirvaninair.co.za/wp-content/uploads/2022/06/service-img03.jpg" alt="Friendly dental consultation" loading="lazy" class="">
+        </div>
+        <div class="dnn-gallery-item dnn-reveal" style="--d:.16s" data-caption="Welcoming reception">
+          <img src="https://drnirvaninair.co.za/wp-content/uploads/2022/06/Nair01.png" alt="Welcoming reception area" loading="lazy" class="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="dnn-services" id="dnn-services">
+    <div class="dnn-container">
+      <div class="dnn-reveal">
+        <div class="dnn-eyebrow">What we do</div>
+        <h2 class="dnn-section-title">Our Dental <em class="">Services</em></h2>
+        <p class="dnn-section-sub">From routine check-ups to specialised treatments - we offer gentle, high-quality care for the whole family.</p>
+      </div>
+      <div class="dnn-services-grid">
+        <div class="dnn-service-card dnn-reveal">
+          <div class="dnn-service-icon" aria-hidden="true">🦷</div>
+          <div class=""><h3 class="">Check-ups &amp; Oral Hygiene</h3><p class="">Preventive care, professional cleaning and personalised advice to keep your smile healthy.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal" style="--d:.06s">
+          <div class="dnn-service-icon" aria-hidden="true">✨</div>
+          <div class=""><h3 class="">Fillings &amp; Restorations</h3><p class="">Tooth-coloured fillings and durable restorations using quality materials.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal" style="--d:.12s">
+          <div class="dnn-service-icon" aria-hidden="true">💎</div>
+          <div class=""><h3 class="">Teeth Whitening</h3><p class="">Safe, professional whitening for a brighter, more confident smile.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal">
+          <div class="dnn-service-icon" aria-hidden="true">👑</div>
+          <div class=""><h3 class="">Crowns &amp; Cosmetic</h3><p class="">Natural-looking crowns and cosmetic treatments tailored to you.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal" style="--d:.06s">
+          <div class="dnn-service-icon" aria-hidden="true">🔩</div>
+          <div class=""><h3 class="">Dental Implants</h3><p class="">Permanent tooth replacement solutions that look and feel natural.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal" style="--d:.12s">
+          <div class="dnn-service-icon" aria-hidden="true">😌</div>
+          <div class=""><h3 class="">Extractions &amp; Root Canals</h3><p class="">Gentle procedures with a focus on comfort and clear communication.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal">
+          <div class="dnn-service-icon" aria-hidden="true">😃</div>
+          <div class=""><h3 class="">Dentures</h3><p class="">Well-fitting, comfortable dentures for restored function and appearance.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal" style="--d:.06s">
+          <div class="dnn-service-icon" aria-hidden="true">❤️</div>
+          <div class=""><h3 class="">Periodontics &amp; Gum Care</h3><p class="">Treatment and maintenance for healthy gums and long-term oral health.</p></div>
+        </div>
+        <div class="dnn-service-card dnn-reveal" style="--d:.12s">
+          <div class="dnn-service-icon" aria-hidden="true">👨‍👩‍👦</div>
+          <div class=""><h3 class="">Family &amp; Children’s Dentistry</h3><p class="">A caring approach especially for little patients and busy parents.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="dnn-why-us" id="dnn-why-us">
+    <div class="dnn-container">
+      <div class="dnn-center dnn-reveal">
+        <div class="dnn-eyebrow">The Nair difference</div>
+        <h2 class="dnn-section-title">Why Patients <em class="">Choose Us</em></h2>
+        <p class="dnn-section-sub">We combine modern techniques with genuine care so every visit feels reassuring.</p>
+      </div>
+      <div class="dnn-why-grid">
+        <div class="dnn-why-item dnn-reveal">
+          <div class="dnn-num">1</div>
+          <h3 class="">Painless Focus</h3>
+          <p class="">Gentle techniques and a calm environment for even the most anxious patients.</p>
+        </div>
+        <div class="dnn-why-item dnn-reveal" style="--d:.08s">
+          <div class="dnn-num">2</div>
+          <h3 class="">Affordable Options</h3>
+          <p class="">Cash incentives, medical aids, dental networks and flexible payment methods.</p>
+        </div>
+        <div class="dnn-why-item dnn-reveal" style="--d:.16s">
+          <div class="dnn-num">3</div>
+          <h3 class="">Modern Technology</h3>
+          <p class="">Accurate diagnostics and quality materials for lasting results.</p>
+        </div>
+        <div class="dnn-why-item dnn-reveal" style="--d:.24s">
+          <div class="dnn-num">4</div>
+          <h3 class="">Family Friendly</h3>
+          <p class="">Special care for children and a practice that feels welcoming to everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="dnn-cta-band">
+    <div class="dnn-container dnn-cta-inner dnn-reveal">
+      <div class="">
+        <h2 class="">Ready for a brighter, healthier smile?</h2>
+        <p class="">Book your family’s next check-up today - we’ll find a time and branch that suits you.</p>
+      </div>
+      <div class="dnn-cta-actions">
+        <a href="#dnn-book" class="dnn-btn dnn-btn-primary">Book Now</a>
+        <a href="https://wa.me/27824651722" class="dnn-btn dnn-btn-ghost" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="dnn-booking" id="dnn-book">
+    <div class="dnn-container">
+      <div class="dnn-booking-layout">
+        <div class="dnn-booking-info dnn-reveal">
+          <div class="dnn-eyebrow">Get in touch</div>
+          <h2 class="dnn-section-title">Book Your <em class="">Appointment</em></h2>
+          <p class="">The easiest ways to get in touch. We respond as quickly as possible during surgery hours.</p>
+          <div class="dnn-contact-methods">
+            <div class="dnn-contact-method">
+              <div class="dnn-icon" aria-hidden="true">📱</div>
+              <div class="">
+                <strong class="">Call or WhatsApp</strong>
+                <a href="tel:+27824651722" class="">082 465 1722</a>
+                <span class=""> · Preferred for quick bookings</span>
+              </div>
+            </div>
+            <div class="dnn-contact-method">
+              <div class="dnn-icon" aria-hidden="true">☎️</div>
+              <div class="">
+                <strong class="">Branch Landlines</strong>
+                <span class="">Rylands <a href="tel:+27216336566" class="">021 633 6566</a> · New Woodlands <a href="tel:+27213711996" class="">021 371 1996</a> · Kraaifontein <a href="tel:+27219860158" class="">021 986 0158</a></span>
+              </div>
+            </div>
+            <div class="dnn-contact-method">
+              <div class="dnn-icon" aria-hidden="true">✉️</div>
+              <div class="">
+                <strong class="">Email</strong>
+                <a href="mailto:Dr-nirvani-nair@telkomsa.net" class="">Dr-nirvani-nair@telkomsa.net</a>
+              </div>
+            </div>
+          </div>
+          <p class="dnn-hours">Hours: Monday-Saturday · Closed Sundays &amp; public holidays
+            We accept cash, card, EFT (by arrangement) and all medical aids.</p>
+        </div>
+
+        <div class="dnn-form-card dnn-reveal" style="--d:.1s">
+          <h3 class="">Send an Enquiry</h3>
+          <p class="dnn-form-note">Fill in the form and your email app will open with a ready-to-send message to the practice. No third-party form services used.</p>
+          <form id="dnnEnquiryForm" novalidate="" class="">
+            <div class="dnn-form-row">
+              <div class="dnn-form-group">
+                <label for="dnn-name" class="">Full name *</label>
+                <input type="text" id="dnn-name" name="name" required="" placeholder="Your name" autocomplete="name" class="">
+                <div class="dnn-field-error">Please enter your name.</div>
+              </div>
+              <div class="dnn-form-group">
+                <label for="dnn-phone" class="">Phone / WhatsApp *</label>
+                <input type="tel" id="dnn-phone" name="phone" required="" placeholder="082 000 0000" autocomplete="tel" inputmode="tel" class="">
+                <div class="dnn-field-error">Please enter a contact number.</div>
+              </div>
+            </div>
+            <div class="dnn-form-group">
+              <label for="dnn-email" class="">Email</label>
+              <input type="email" id="dnn-email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" class="">
+            </div>
+            <div class="dnn-form-row">
+              <div class="dnn-form-group">
+                <label for="dnn-location" class="">Preferred location</label>
+                <select id="dnn-location" name="location" class="">
+                  <option value="">No preference / any</option>
+                  <option value="Rylands (Rawoot Square)">Rylands – Rawoot Square</option>
+                  <option value="New Woodlands">New Woodlands</option>
+                  <option value="Kraaifontein (Peerless Park)">Kraaifontein – Peerless Park</option>
+                </select>
+              </div>
+              <div class="dnn-form-group">
+                <label for="dnn-reason" class="">Reason for visit</label>
+                <select id="dnn-reason" name="reason" class="">
+                  <option value="">Select one…</option>
+                  <option value="Check-up / Cleaning">Check-up / Cleaning</option>
+                  <option value="Pain / Emergency">Pain / Emergency</option>
+                  <option value="Filling or Restoration">Filling or Restoration</option>
+                  <option value="Whitening">Whitening</option>
+                  <option value="Children’s dentistry">Children’s dentistry</option>
+                  <option value="Dentures / Crowns / Implants">Dentures / Crowns / Implants</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="dnn-form-group">
+              <label for="dnn-message" class="">Message (optional)</label>
+              <textarea id="dnn-message" name="message" placeholder="Any extra details, preferred days/times, etc." class=""></textarea>
+            </div>
+            <button type="submit" class="dnn-btn dnn-btn-primary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+              Open Email to Send Enquiry
+            </button>
+          </form>
+          <div class="dnn-form-success" id="dnnFormSuccess" role="status" aria-live="polite">
+            Your email app should open with a pre-filled message — just hit Send. If it doesn’t open, please email us at <strong class="">Dr-nirvani-nair@telkomsa.net</strong> or WhatsApp <strong class="">082 465 1722</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="dnn-footer">
+    <div class="dnn-container">
+      <div class="dnn-footer-grid">
+        <div class="dnn-footer-brand">
+          <div class="dnn-logo">
+            <span class="dnn-logo-mark" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8d48b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.4-3.6-2-5.4-1.3C4.3 5 3.4 7.6 4 10.3c.4 1.8 1 3.3 1.4 5 .4 1.9.6 4.7 2.2 4.7 1.7 0 1.6-3.6 2.4-5 .5-.8 1.3-.8 2 0 .8 1.4.7 5 2.4 5 1.6 0 1.8-2.8 2.2-4.7.4-1.7 1-3.2 1.4-5 .6-2.7-.3-5.3-2.6-6.1-1.8-.7-3.8-.1-5.4 1.3z"></path></svg>
+            </span>
+            <span class="">Dr Nirvani Nair<small>Family Dental Practice</small></span>
+          </div>
+          <p class="">Gentle, modern dentistry for the whole family across three Cape Town locations.</p>
+        </div>
+        <div class="dnn-footer-col">
+          <h4 class="">Quick Links</h4>
+          <a href="#dnn-locations" class="">Locations</a>
+          <a href="#dnn-gallery" class="">Gallery</a>
+          <a href="#dnn-services" class="">Services</a>
+          <a href="#dnn-book" class="">Book Appointment</a>
+        </div>
+        <div class="dnn-footer-col">
+          <h4 class="">Contact</h4>
+          <a href="tel:+27824651722" class="">082 465 1722</a>
+          <a href="mailto:Dr-nirvani-nair@telkomsa.net" class="">Email us</a>
+          <a href="https://wa.me/27824651722" target="_blank" rel="noopener" class="">WhatsApp</a>
+        </div>
+        <div class="dnn-footer-col">
+          <h4 class="">Hours</h4>
+          <p class="">Mon - Sat</p>
+          <p class="">Closed Sun &amp; Public Holidays</p>
+        </div>
+      </div>
+      <div class="dnn-footer-bottom">
+        © <span id="dnn-year" class=""></span> Dr Nirvani Nair Dental Practice. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky action bar (phones only) -->
+  <nav class="dnn-mobile-bar" id="dnnMobileBar" aria-label="Quick contact">
+    <a href="tel:+27824651722" class="dnn-mb-call">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+      Call
+    </a>
+    <a href="https://wa.me/27824651722" class="dnn-mb-wa" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.9 9.9 0 0012.04 2z"></path></svg>
+      WhatsApp
+    </a>
+    <a href="#dnn-book" class="dnn-mb-book">Book now</a>
+  </nav>
+
+</div><!-- /.dnn-wrap -->
+<!-- Default Statcounter code for DrNirvaniNair.co.za
+https://drnirvaninair.co.za/ -->
+<script type="text/javascript">
+var sc_project=12765284; 
+var sc_invisible=1; 
+var sc_security="66d77b40"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async=""></script>
+<noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12765284/0/66d77b40/1/" alt="Web Analytics" referrerpolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>
